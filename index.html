@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rainfall in Africa</title>
+  <link rel="stylesheet" href="styles/assignment.css">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/themes/sunset.js"></script>
+</head>
+<body>
+  <div id="header">
+    <h1>Rainfall in Africa</h1>
+    <p>by Lawson Nuland</p>
+  </div>
+  <div id="wrapper">
+  <p id="paragraph">As is common knowledge, the band Toto released a song titled "Africa" on September 30th, 1982. In one of the definitive lines of the song, singer Bobby Kimball sings, "I bless the rains down in Africa." Considering the popularity of the song, I believe it is important to chart the rainfall in African countries around the time of the song's release, in order to see if Bobby Kimball truly did "bless the rains down in Africa." However, due to the lack of data on African nations on the World Meteorogical Organization's website, only data from 1982 is available.</p>
+
+  <div id="container"></div>
+
+
+    <script>
+        Highcharts.chart('container', {
+    chart: {
+        type: 'line'
+    },
+    title: {
+        text: 'Monthly Average Rainfall by Country'
+    },
+    subtitle: {
+        text: 'Source: World Meteorogical Organization'
+    },
+    xAxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    },
+    yAxis: {
+        title: {
+            text: 'Rainfall (mm)'
+        }
+    },
+    plotOptions: {
+        line: {
+            dataLabels: {
+                enabled: true
+            },
+            enableMouseTracking: false
+        }
+    },
+    series: [{
+        name: 'South Africa',
+        data: [125, 94,	90,	54,	13,	9,	4,	6,	27,	7,	11,	103]
+    }, {
+        name: 'Senegal',
+        data: [1.5,	1.9,	0.2,	0,	0.1,	6.8,	40.2,	94.3,	92.3,	23,	0.3,	0.7]
+      }, {
+        name: 'Nigeria',
+        data: [0.4,	2.8,	29.8,	92.9,	159.8,	198.5,	303.8,	290.1,	197.6,	38.3,	0.3,	0.5]
+      }, {
+        name: 'Chad',
+        data: [0,	0,	0.3,	10.3,	25.8,	50.3,	144,	174.4,	84.3,	20.3,	0.1,	0]
+    }]
+    });
+    </script>
+
+  <p>Data provided by the <a href="https://www.wmo.int/pages/index_en.html">World Meteorogical Organization</a>.</p>
+  <div id="chart"></div>
+  <p>Data provided by the <a href="https://www.wmo.int/pages/index_en.html">World Meteorogical Organization</a>.</p>
+
+    <script>
+        Highcharts.chart('chart', {
+      chart: {
+          type: 'bar'
+      },
+      title: {
+          text: 'Total Rainfall in 1982'
+      },
+      subtitle: {
+          text: 'Source: World Meteorogical Organization'
+      },
+      xAxis: {
+          categories: ['South Africa', 'Senegal', 'Nigeria', 'Chad'],
+          title: {
+              text: null
+          }
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Total annual Rainfall',
+              align: 'high'
+          },
+          labels: {
+              overflow: 'justify'
+          }
+      },
+      tooltip: {
+          valueSuffix: ' millimeters'
+      },
+      plotOptions: {
+          bar: {
+              dataLabels: {
+                  enabled: true
+              }
+          }
+      },
+      legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          x: -40,
+          y: 80,
+          floating: true,
+          borderWidth: 1,
+          backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+          shadow: true
+      },
+      credits: {
+          enabled: false
+      },
+      series: [{
+          name: '1982',
+          data: [718, 261.3, 1314.8, 509.7]
+      }]
+    });
+    </script>
+
+
+</div>
+
+
+
+</body>
+</html>
